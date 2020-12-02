@@ -1,23 +1,21 @@
 package programming;
 
+import java.util.Arrays;
 import java.util.List;
 
 public class FP01Exercises { 
 	
 	public static void main(String[] args) {
-		List<Integer> numbers = List.of(12, 9, 13, 4, 6, 2, 4, 12, 15);
+		List<Integer> numbers = Arrays.asList(12, 9, 13, 4, 6, 2, 4, 12, 15);
 		printCubesOfOddNumbersInListFunctional(numbers);
 //		printOddNumbersInListFunctional(numbers);
 
 		System.out.println("STEP 2");
-		List<String> courses = List.of("Spring", "Spring Boot", "API" , "Microservices","AWS", "PCF","Azure", "Docker", "Kubernetes");
+		List<String> courses = Arrays.asList("Spring", "Spring Boot", "API" , "Microservices","AWS", "PCF","Azure", "Docker", "Kubernetes");
 		courses.stream()
 		.filter(course -> course.contains("Spring"))
+				.map(course -> course + " " + course.length())
 		.forEach(System.out::println);
-
-//		courses.stream()
-//			.map(course -> course + " " + course.length())
-//			.forEach(System.out::println);
 	}
 
 	private static void printOddNumbersInListFunctional(List<Integer> numbers) {
