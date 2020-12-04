@@ -50,6 +50,21 @@ public class FP03FunctionalInterfaces {
 			.map(squareFunction)
 			.forEach(consumer);
 
+		BinaryOperator<Integer> integerBinaryOperator = Integer::sum;
+
+		BinaryOperator<Integer> binaryOperator = new BinaryOperator<Integer>(){
+
+			@Override
+			public Integer apply(Integer n1, Integer n2) {
+				return n1 + n2 ;
+			}
+		};
+
+
+		int sum = numbers.stream()
+				.reduce(0, integerBinaryOperator);
+
+
 
 	}
 }
