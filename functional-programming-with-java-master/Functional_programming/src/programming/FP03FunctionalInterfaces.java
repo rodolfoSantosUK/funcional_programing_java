@@ -60,7 +60,6 @@ public class FP03FunctionalInterfaces {
 			}
 		};
 
-
 		int sum = numbers.stream()
 				.reduce(0, integerBinaryOperator);
 
